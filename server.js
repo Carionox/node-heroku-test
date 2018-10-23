@@ -48,7 +48,7 @@ hbs.registerHelper('getCurrentYear', ()=>{
     return new Date().getFullYear();
 });
 hbs.registerHelper('screamIt', (txt)=>{
-    txt.toUpperCase();
+    return txt.toUpperCase();
 });
 app.get('/', (req, res)=>{
 
@@ -80,6 +80,16 @@ app.get('/about',(req,res)=>{
 app.get('/bad', (req, res) =>{
 
     res.send({errorMessage: 'Unable to handle request. '});
+
+});
+
+app.get('/projects',(req, res)=>{
+
+    res.render('projects.hbs', {
+
+        pageTitle: 'Projects Page',
+
+    });
 
 });
 
